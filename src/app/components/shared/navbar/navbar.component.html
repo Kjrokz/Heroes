@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="header">
+  <!-- Image and text -->
+  <a class="navbar-brand" href="#">
+    <img
+      src="assets/img/A-64.png"
+      width="30"
+      height="30"
+      class="d-inline-block align-top"
+      alt=""
+    />
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto pt-2">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['home']"
+          >Inicio <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['heroes']">Heroes</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['about']">Acerca</a>
+      </li>
+      <li >
+        <!-- <div class="onoffswitch">
+          <input
+            type="checkbox"
+            name="onoffswitch"
+            class="onoffswitch-checkbox"
+            id="myonoffswitch"
+            checked
+          />
+          <label class="onoffswitch-label" for="myonoffswitch">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+          </label>
+        </div> -->
+        <div class="custom-control custom-switch mt-2 mb-3">
+          <input
+            type="checkbox"
+            class="custom-control-input"
+            id="customSwitch1"
+          />
+          <label class="custom-control-label" for="customSwitch1"></label>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0 ">
+      <input
+        class="form-control mr-sm-2"
+        type="text"
+        placeholder="Buscar héroe"
+        (keyup.enter)="buscarHeroe(buscarTexto.value)"
+        #buscarTexto
+      />
+      <button
+        class="btn btn-outline-primary my-2 my-sm-0 mt-4"
+        type="button"
+        (click)="buscarHeroe(buscarTexto.value)"
+      >
+        Buscar
+      </button>
+    </form>
+  </div>
+</nav>

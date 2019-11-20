@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>
+    Busqueda: <small>{{ termino }}</small>
+  </h1>
+  <hr />
+
+  <div *ngIf="busqueda.length == 0" class="row animated fadeIn fast">
+    <div class="col-md-12">
+      <div class="alert alert-info">
+        No existen resultados con el término: {{ termino }}
+      </div>
+    </div>
+  </div>
+  <div class="card-columns">
+    <app-heroe-targeta
+      [heroe]="heroe"
+      [indice]="heroe.idx"
+      *ngFor="let heroe of busqueda"
+    ></app-heroe-targeta>
+  </div>
+</div>
